@@ -3,121 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog de NARUTOOOO</title>
-   
+    <title>Meu Blog de NARUTOOOO 🔥 - Dattebayo!</title>
+  
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0f172a;
+            background: linear-gradient(#0f172a, #1e2937);
             color: #e2e8f0;
             line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 25% 30%, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 70%, rgba(185, 28, 28, 0.08) 0%, transparent 50%);
         }
         header {
-            background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+            background: linear-gradient(135deg, #b91c1c, #f59e0b, #b91c1c);
             color: white;
             text-align: center;
-            padding: 50px 20px;
-            box-shadow: 0 4px 20px rgba(185, 28, 28, 0.4);
+            padding: 70px 20px 50px;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: "🌀";
+            font-size: 180px;
+            position: absolute;
+            opacity: 0.08;
+            top: -40px;
+            right: -40px;
         }
         h1 {
             margin: 0;
-            font-size: 3.2em;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            font-size: 3.8em;
+            text-shadow: 0 6px 15px rgba(0,0,0,0.6);
+            letter-spacing: 3px;
         }
+        .subtitle {
+            font-size: 1.6em;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
         main {
-            max-width: 900px;
+            max-width: 920px;
             margin: 30px auto;
-            padding: 30px;
+            padding: 40px;
             background-color: #1e2937;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(185, 28, 28, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.25);
+            border: 3px solid #f59e0b;
         }
+
         .imagem-naruto img {
             max-width: 100%;
-            width: 650px;
+            width: 680px;
             height: auto;
             border-radius: 20px;
-            border: 6px solid #f59e0b;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            transition: transform 0.4s;
+            border: 8px solid #f59e0b;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            transition: all 0.4s;
+            display: block;
+            margin: 30px auto;
         }
         .imagem-naruto img:hover {
-            transform: scale(1.03);
+            transform: scale(1.04) rotate(2deg);
         }
+
         h2 {
             color: #f59e0b;
-            border-bottom: 3px solid #f59e0b;
-            padding-bottom: 10px;
-            margin-top: 35px;
+            border-bottom: 4px solid #f59e0b;
+            padding-bottom: 12px;
+            margin-top: 45px;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.5);
         }
-        p { font-size: 1.1em; }
 
-        /* Botão de Like - MAIS DESTAQUE */
+        .naruto-phrase {
+            background: rgba(245, 158, 11, 0.15);
+            border-left: 6px solid #f59e0b;
+            padding: 18px 25px;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 1.2em;
+            border-radius: 8px;
+            color: #fed7aa;
+        }
+
+        /* Botão de Like */
         .like-container {
             text-align: center;
-            margin: 50px 0 30px 0;
+            margin: 70px 0 50px 0;
         }
         .like-button {
-            background-color: #b91c1c;
+            background: linear-gradient(45deg, #b91c1c, #f59e0b);
             color: white;
             border: none;
-            padding: 16px 40px;
-            font-size: 1.4em;
+            padding: 20px 50px;
+            font-size: 1.6em;
             border-radius: 50px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 15px;
-            transition: all 0.3s;
-            box-shadow: 0 8px 20px rgba(185, 28, 28, 0.5);
+            gap: 18px;
+            transition: all 0.4s;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.5);
             font-weight: bold;
         }
         .like-button:hover {
-            background-color: #f59e0b;
-            color: #1e2937;
-            transform: scale(1.1);
+            transform: scale(1.12) rotate(3deg);
         }
         .like-button.liked {
-            background-color: #f59e0b;
-            color: #1e2937;
-            animation: pop 0.5s;
+            background: linear-gradient(45deg, #f59e0b, #b91c1c);
+            animation: pop 0.6s;
         }
         .heart {
-            font-size: 2em;
-            transition: all 0.3s;
+            font-size: 2.4em;
         }
         .like-button.liked .heart {
-            animation: heartBeat 0.6s ease;
+            animation: heartBeat 0.7s ease;
             color: #ef4444;
         }
+
         @keyframes pop {
             0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
+            50% { transform: scale(1.35); }
             100% { transform: scale(1); }
         }
         @keyframes heartBeat {
             0% { transform: scale(1); }
-            40% { transform: scale(1.6); }
+            50% { transform: scale(1.7); }
             100% { transform: scale(1); }
-        }
-
-        .like-count {
-            font-size: 1.3em;
-            min-width: 50px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Meu Blog de NARUTOOOO 🔥</h1>
-        <p><strong>Olá, sou o futuro Hokage, tô certo!</strong> 🌀</p>
+        <h1>NARUTOOOO 🔥</h1>
+        <p class="subtitle">O Melhor Blog do Futuro Hokage • Dattebayo!!! 🌀</p>
     </header>
 
     <main>
-        <!-- Seu conteúdo anterior continua aqui... -->
+        <p style="text-align:center; font-size:1.3em; color:#fed7aa;">
+            "Eu nunca vou desistir! Esse é o meu jeito ninja!" — Naruto Uzumaki
+        </p>
 
+        <div class="naruto-phrase">
+            "Se você não consegue vencer sozinho, use a força dos laços que te conectam aos outros!"
+        </div>
+
+        <div class="imagem-naruto">
+            <img src="https://picsum.photos/id/1015/800/500" alt="Naruto Sábio dos Sapos">
+        </div>
+
+        <h2>Por que Naruto mudou minha vida?</h2>
+        <p>Porque ele me ensinou que <strong>mesmo sendo o pior da turma</strong>, com determinação e bons amigos você pode se tornar o mais forte de todos. <strong>Dattebayo!</strong></p>
+
+        <div class="naruto-phrase">
+            "Não importa quantas vezes eu caia... eu sempre vou me levantar! Acredite nisso!"
+        </div>
+
+        <h2>Meus Jutsus Favoritos</h2>
+        <ul>
+            <li>🔥 <strong>Rasengan</strong> — O poder da determinação girando na palma da mão</li>
+            <li>🌀 <strong>Kage Bunshin no Jutsu</strong> — Treinar mil vezes mais rápido</li>
+            <li>⚡ <strong>Modo Sábio</strong> — Quando você precisa de um boost de poder</li>
+            <li>💥 <strong>Baryon Mode</strong> — O modo mais insano até hoje</li>
+        </ul>
+
+        <div class="imagem-naruto">
+            <img src="https://picsum.photos/id/201/800/500" alt="Naruto vs Sasuke">
+        </div>
+
+        <div class="naruto-phrase">
+            "O que eu mais odeio são pessoas que desistem dos seus sonhos!"
+        </div>
+
+        <h2>Mensagem Final do Hokage</h2>
+        <p>Não importa o quão difícil a vida fique, lembre-se: <strong>você nunca está sozinho</strong>. Tem sempre alguém torcendo por você. Continue correndo atrás do seu sonho, mesmo que o mundo inteiro esteja contra você!</p>
+
+        <!-- Botão de Like -->
         <div class="like-container">
             <button class="like-button" id="likeBtn">
                 <span class="heart">❤️</span>
@@ -125,14 +190,18 @@
                 <span>Dattebayo!</span>
             </button>
         </div>
+
+        <p style="text-align:center; margin-top:30px; font-size:1.25em; color:#f59e0b;">
+            Qual é o seu momento favorito de Naruto? Comenta aí embaixo, acredita nisso! 🌀
+        </p>
     </main>
 
     <script>
         const likeBtn = document.getElementById('likeBtn');
         const likeCount = document.getElementById('likeCount');
-        let count = 1247;     // número inicial (pode mudar)
+        let count = 2487; // aumentei um pouco pra ficar mais animado
         let liked = false;
-
+        
         likeCount.textContent = count.toLocaleString('pt-BR');
 
         likeBtn.addEventListener('click', () => {

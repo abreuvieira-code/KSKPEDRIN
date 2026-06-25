@@ -7,70 +7,145 @@
     
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #0f172a;
             color: #e2e8f0;
+            line-height: 1.7;
         }
 
         header {
-            background-color: #b91c1c;
+            background: linear-gradient(135deg, #b91c1c, #7f1d1d);
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            box-shadow: 0 4px 20px rgba(185, 28, 28, 0.4);
         }
 
         h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 3.2em;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
         }
 
         main {
             max-width: 900px;
             margin: 30px auto;
-            padding: 25px;
+            padding: 30px;
             background-color: #1e2937;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(185, 28, 28, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(185, 28, 28, 0.3);
         }
 
         .imagem-naruto {
             text-align: center;
-            margin: 25px 0;
+            margin: 30px 0;
         }
 
         .imagem-naruto img {
-            max-width: 100%;          
-            width: 650px;            
+            max-width: 100%;
+            width: 650px;
             height: auto;
-            border-radius: 15px;
-            border: 4px solid #f59e0b;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            border: 6px solid #f59e0b;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            transition: transform 0.4s;
+        }
+
+        .imagem-naruto img:hover {
+            transform: scale(1.03);
         }
 
         h2 {
             color: #f59e0b;
+            border-bottom: 3px solid #f59e0b;
+            padding-bottom: 10px;
+            margin-top: 35px;
         }
 
         p {
-            line-height: 1.7;
+            font-size: 1.1em;
         }
 
         ul {
             list-style-type: none;
+            padding: 0;
         }
 
         li {
             background-color: #334155;
-            margin: 8px 0;
-            padding: 12px;
-            border-radius: 8px;
-            border-left: 5px solid #f59e0b;
+            margin: 12px 0;
+            padding: 15px 18px;
+            border-radius: 10px;
+            border-left: 6px solid #f59e0b;
+            transition: all 0.3s;
+        }
+
+        li:hover {
+            background-color: #475569;
+            transform: translateX(10px);
         }
 
         hr {
-            border: 1px solid #f59e0b;
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #f59e0b, transparent);
+            margin: 35px 0;
+        }
+
+        /* Botão de Like */
+        .like-container {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .like-button {
+            background-color: #b91c1c;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 6px 15px rgba(185, 28, 28, 0.4);
+        }
+
+        .like-button:hover {
+            background-color: #f59e0b;
+            color: #1e2937;
+            transform: scale(1.08);
+        }
+
+        .like-button.liked {
+            background-color: #f59e0b;
+            color: #1e2937;
+            animation: pop 0.4s;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.4); }
+            100% { transform: scale(1); }
+        }
+
+        .heart {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .like-button.liked .heart {
+            animation: heartBeat 0.6s;
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
@@ -78,33 +153,4 @@
 
     <header>
         <h1>Meu Blog de NARUTOOOO</h1>
-        <p><strong>Olá, sou o futuro Hokage, tô certo!</strong></p>
-    </header>
-
-    <main>
-        <!-- Imagem do Naruto -->
-        <div class="imagem-naruto">
-            <img src="pngwing.com (1).png" 
-                 alt="Naruto Uzumaki">
-        </div>
-
-        <p>Nesse blog vou mostrar como Naruto é um anime incrível, tô certo!</p>
-        
-        <hr>
-        
-        <p>Naruto é um anime que retrata a vida de um garoto abandonado e solitário, que encontra a si mesmo e evolui, sempre bondoso e resiliente.</p>
-        
-        <h2>Poderes Incríveis</h2>
-        <ul>
-            <li>RASENGAN</li>
-            <li>RASENSHURIKEN</li>
-            <li>BIJU MODE</li>
-            <li>SÉTIMO HOKAGE</li>
-        </ul>
-
-        <h2>Atualizações</h2>
-        <p>Em breve... Novas análises, rankings de episódios e muito mais!</p>
-    </main>
-
-</body>
-</html>
+        <p><strong>Olá, sou o futuro Hokage, tô certo!</strong></p

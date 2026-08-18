@@ -74,6 +74,7 @@
             border-radius: 16px;
             box-shadow: 0 15px 40px rgba(185, 28, 28, 0.4);
             border: 3px solid #b91c1c;
+            box-sizing: border-box;
         }
 
         h2 {
@@ -82,6 +83,10 @@
             padding-bottom: 12px;
             margin-top: 45px;
             text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+        }
+
+        ul {
+            padding-left: 25px;
         }
 
         .naruto-phrase {
@@ -115,6 +120,7 @@
             transition: all 0.4s;
             box-shadow: 0 10px 30px rgba(185, 28, 28, 0.6);
             font-weight: bold;
+            outline: none;
         }
         .like-button:hover {
             transform: scale(1.12) rotate(4deg);
@@ -125,7 +131,9 @@
             animation: pop 0.6s;
         }
         .heart {
-            font-size: 2.6em;
+            font-size: 1.6em;
+            display: inline-block;
+            transition: transform 0.3s;
         }
         .like-button.liked .heart {
             animation: heartBeat 0.7s ease;
@@ -134,12 +142,12 @@
 
         @keyframes pop {
             0% { transform: scale(1); }
-            50% { transform: scale(1.4); }
+            50% { transform: scale(1.15); }
             100% { transform: scale(1); }
         }
         @keyframes heartBeat {
             0% { transform: scale(1); }
-            50% { transform: scale(1.8); }
+            50% { transform: scale(1.6); }
             100% { transform: scale(1); }
         }
     </style>
@@ -158,6 +166,11 @@
     </header>
 
     <main>
+        <!-- Imagem Adicionada -->
+        <div style="text-align: center; margin-bottom: 30px;">
+            <img src="pngwing.com (1).png" alt="Akatsuki Image" style="max-width: 100%; height: auto; border-radius: 8px;">
+        </div>
+
         <p style="text-align:center; font-size:1.4em; color:#fda4af; font-weight:bold;">
             "Eu nunca vou desistir! Esse é o meu jeito ninja!" — Naruto Uzumaki
         </p>
@@ -175,7 +188,7 @@
 
         <h2>Meus Jutsus Favoritos</h2>
         <ul>
-            <li>🔥 <strong>Rasengan</strong> — O poder da determinação girando na palma da mão</li>
+            <li>🔥 <strong>Rasengan</strong> — O power da determinação girando na palma da mão</li>
             <li>🌀 <strong>Kage Bunshin no Jutsu</strong> — Treinar mil vezes mais rápido</li>
             <li>⚡ <strong>Modo Sábio</strong> — Quando você precisa de poder absoluto</li>
             <li>💥 <strong>Baryon Mode</strong> — O modo mais perigoso e insano</li>
@@ -195,7 +208,7 @@
         <!-- Botão de Like -->
         <div class="like-container">
             <button class="like-button" id="likeBtn">
-                <span class="heart">❤️</span>
+                <span class="heart" id="heartIcon">❤️</span>
                 <span class="like-count" id="likeCount">0</span>
                 <span>Dattebayo!</span>
             </button>
@@ -209,6 +222,8 @@
     <script>
         const likeBtn = document.getElementById('likeBtn');
         const likeCount = document.getElementById('likeCount');
+        const heartIcon = document.getElementById('heartIcon');
+        
         let count = 3874;
         let liked = false;
        
@@ -219,10 +234,12 @@
                 count++;
                 liked = true;
                 likeBtn.classList.add('liked');
+                heartIcon.textContent = '❤️';
             } else {
                 count--;
                 liked = false;
                 likeBtn.classList.remove('liked');
+                heartIcon.textContent = '💔';
             }
             likeCount.textContent = count.toLocaleString('pt-BR');
         });
